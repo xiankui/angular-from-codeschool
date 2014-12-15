@@ -1,0 +1,29 @@
+body{
+	padding:25px 250px;
+}
+img.full{
+	display: block;
+	width: 500px;
+	height: 400px;
+	margin:25px auto;
+}
+img.thumb{
+	width: 200px;
+	height: 150px;
+}
+
+.product-gallery{
+	text-align: center;
+}
+.product-gallery li{
+	display: inline-block;
+	margin:0 25px;
+}
+
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}

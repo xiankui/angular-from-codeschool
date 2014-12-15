@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="store">
+<head>
+	<meta charset="UTF-8">
+	<title>learn angularjs</title>
+  <link rel="stylesheet" href="css/bootstrap-3.3.0.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    
+    <section ng-controller="StoreController as store">
+      <ul class="list-group">
+        <!-- list-item -->
+        <li class="list-group-item" ng-repeat="product in store.products | limitTo:2" ng-hide="product.isSoldOut">
+          <product-title></product-title>
+          <product-gallery></product-gallery>
+          <product-panel></product-panel>
+         
+        </li>
+      </ul>
+    </section>
+    
+    
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/angular-1.2.27.js"></script>
+    <script src="js/level04.js"></script>
+  </body>
+</html>

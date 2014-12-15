@@ -1,0 +1,35 @@
+<!-- product panel -->
+<div class="product-panel">
+  <!-- tab -->
+  <ul class="nav nav-pills">
+    <li ng-class="{active:panel.isCurrent(1)}">
+      <a ng-click="panel.setCurrent(1)">Description</a>
+    </li>
+    <li ng-class="{active:panel.isCurrent(2)}">
+      <a ng-click="panel.setCurrent(2)">Specifications</a>
+    </li>
+    <li ng-class="{active:panel.isCurrent(3)}">
+      <a ng-click="panel.setCurrent(3)">Reviews</a>
+    </li>
+  </ul>
+  <!-- tab content -->
+  <div class="panel" ng-show="panel.isCurrent(1)">
+    <h4>Description</h4>
+    <p>{{product.description}}</p>
+  </div>
+  <div class="panel" ng-show="panel.isCurrent(2)">
+    <h4>Specifications</h4>
+    <p>{{product.specifications}}</p>
+  </div>
+  <div class="panel" ng-show="panel.isCurrent(3)">
+    <h4>Reviews</h4>
+    <blockquote ng-repeat="review in product.reviews">
+      <p> {{review.body}} </p>
+      <b>Stars: {{review.stars}}</b>
+      <cite>by: {{review.author}}</cite>
+    </blockquote>
+
+    <!-- from template product-review-form.htm -->
+    <product-review-form></product-review-form>
+  </div>
+</div>
