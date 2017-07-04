@@ -7,22 +7,32 @@
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <aside>
+    <h2>step by step</h2>
+    <ul>
+      <li><a href="level01.htm">level01</a></li>
+      <li><a href="level02.htm">level02</a></li>
+      <li><a href="level03.htm">level03</a></li>
+      <li><a href="level04.htm">level04</a></li>
+    </ul>
+  </aside>
+  <hr />
+  <section ng-controller="StoreController as store">
+    <ul class="list-group" ng-app="store-products">
+      <!-- list-item -->
+      <li class="list-group-item" ng-repeat="product in store.products | orderBy:'-price' | limitTo:2" ng-hide="product.isSoldOut">
+        <product-title></product-title>
+        <product-gallery></product-gallery>
+        <product-panel></product-panel> 
+      </li>
+    </ul>
+  </section>
     
-    <section ng-controller="StoreController as store">
-      <ul class="list-group" ng-app="store-products">
-        <!-- list-item -->
-        <li class="list-group-item" ng-repeat="product in store.products | orderBy:'-price' | limitTo:2" ng-hide="product.isSoldOut">
-          <product-title></product-title>
-          <product-gallery></product-gallery>
-          <product-panel></product-panel> 
-        </li>
-      </ul>
-    </section>
     
-    
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/angular-1.2.27.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/products.js"></script>
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/angular-1.2.27.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/products.js"></script>
   </body>
 </html>
